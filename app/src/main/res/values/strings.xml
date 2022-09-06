@@ -16,4 +16,17 @@
     <string name="ThirdFragment">Third Fragment</string>
     <string name="FirstFragment">First Fragment</string>
     <string name="SecondFragment">Second Fragment</string>
+
+    <string name="number1">Number 1</string>
+    <string name="number2">Number 2</string>
+    <string name="calculate">Calcular</string>
+    <string name="resultado">Resultado</string>
+    <string name="suma">Sumar</string>
+    <string name="restar">Restar</string>
+    <string name="dividir">Dividir</string>
+    <string name="multiplicar">Multiplicar</string>
+    <string name="sumar">Sumar</string>
+    <string name="resta">Restar</string>
+    <string name="dividirr">Dividir</string>
+    <string name="multiplicarr">Multiplicar</string>
 </resources>
