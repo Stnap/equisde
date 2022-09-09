@@ -66,87 +66,107 @@ public class FirstFragment extends Fragment {
         binding.calcular.setOnClickListener((View v)->{
 
             if(cb_sum.isChecked() && cb_res.isChecked() && cb_mul.isChecked() && cb_div.isChecked()){
-                txt_resultado.setText("La suma es: " +OpSum()
-                        +"\r\nLa resta es: " +OpRes()
-                        +"\r\nLa multiplicacion es: " +OpMul()
-                        +"\r\nLa division es: " +OpDiv());
-            } else if(cb_mul.isChecked() && cb_div.isChecked()){
-                txt_resultado.setText("El resultado de la multiplicacion es: "+OpMul()
-                +"\r\nEl resultado de la division es:"+OpDiv());
+                txt_resultado.setText("La suma es: " +opSum()
+                        +"\r\nLa resta es: " +opRes()
+                        +"\r\nLa multiplicacion es: " +opMul()
+                        +"\r\nLa division es: " +opDiv());
+            }else if(cb_mul.isChecked() && cb_div.isChecked()){
+                txt_resultado.setText("El resultado de la multiplicacion es: "+opMul()
+                +"\r\nEl resultado de la division es:"+opDiv());
             } else if (cb_sum.isChecked() && cb_res.isChecked()) {
-                txt_resultado.setText("El resultado de la suma es: "+OpSum()
-                        +"\r\nEl resultado de la resta es:"+OpRes());
+                txt_resultado.setText("El resultado de la suma es: "+opSum()
+                        +"\r\nEl resultado de la resta es:"+opRes());
             } else if (cb_sum.isChecked() && cb_div.isChecked()){
-                txt_resultado.setText("El resultado de la suma es: "+OpSum()
-                        +"\r\nEl resultado de la division es:"+OpDiv());
+                txt_resultado.setText("El resultado de la suma es: "+opSum()
+                        +"\r\nEl resultado de la division es:"+opDiv());
             } else if (cb_sum.isChecked()) {
-                txt_resultado.setText("El total de la suma es: "+OpSum());
+                txt_resultado.setText("El total de la suma es: "+opSum());
                 cb_sum.setChecked(false);
             } else if (cb_res.isChecked()) {
-                txt_resultado.setText("El total de la resta es: "+OpRes());
+                txt_resultado.setText("El total de la resta es: "+opRes());
                 cb_res.setChecked(false);
             }else if (cb_mul.isChecked()){
-                txt_resultado.setText("El total de la multiplicacion es: "+OpMul());
+                txt_resultado.setText("El total de la multiplicacion es: "+opMul());
                 cb_mul.setChecked(false);
             }else if (cb_div.isChecked()) {
-                txt_resultado.setText("El total de la division es: " + OpDiv());
+                txt_resultado.setText("El total de la division es: " + opDiv());
                 cb_div.setChecked(false);
 
             }else if(rad_sum.isChecked()){
-                OpSum();
+                opSum();
                 rad_group.clearCheck();
             }else if(rad_sub.isChecked()){
-                OpRes();
+                opRes();
                 rad_group.clearCheck();
             }else if(rad_mul.isChecked()){
-                OpMul();
+                opMul();
                 rad_group.clearCheck();
             }else if(rad_div.isChecked()){
-                OpDiv();
+                opDiv();
                 rad_group.clearCheck();
             }else{
-                ShowMessage();
+                showMessage();
             }
         });
     }
 
-    public void ShowMessage(){
+    public void showMessage(){
         Toast.makeText(this.getContext(),"No se ha seleccionado una operación",Toast.LENGTH_LONG).show();
     }
-    public String OpSum(){
-        double val_1 = Integer.parseInt(txt_number1.getText().toString());
-        double val_2 = Integer.parseInt(txt_number2.getText().toString());
-        double sum = val_1 + val_2;
-        String res = String.valueOf(sum);
-        txt_resultado.setText(res);
-        return res;
-    }
-    public String OpRes(){
-        double val_1 = Integer.parseInt(txt_number1.getText().toString());
-        double val_2 = Integer.parseInt(txt_number2.getText().toString());
-        double sum = val_1 - val_2;
-        String res = String.valueOf(sum);
-        txt_resultado.setText(res);
-        return res;
-    }
-    public String OpMul(){
-        double val_1 = Integer.parseInt(txt_number1.getText().toString());
-        double val_2 = Integer.parseInt(txt_number2.getText().toString());
-        double sum = val_1 * val_2;
-        String res = String.valueOf(sum);
-        txt_resultado.setText(res);
-        return res;
-    }
-    public String OpDiv(){
-        double val_1 = Integer.parseInt(txt_number1.getText().toString());
-        double val_2 = Integer.parseInt(txt_number2.getText().toString());
+    public String opSum(){
         String res = "";
-        if (val_2 != 0) {
-            double sum = val_1 / val_2;
+        if (txt_number1.getText().toString().isEmpty() || txt_number2.getText().toString().isEmpty()) {
+            Toast.makeText(this.getContext(),"Uno o mas campos estan vacios",Toast.LENGTH_SHORT).show();
+        } else {
+            double val_1 = Integer.parseInt(txt_number1.getText().toString());
+            double val_2 = Integer.parseInt(txt_number2.getText().toString());
+            double sum = val_1 + val_2;
             res = String.valueOf(sum);
             txt_resultado.setText(res);
+        }
+        return res;
+    }
+    public String opRes(){
+        String res = "";
+        if (txt_number1.getText().toString().isEmpty() || txt_number2.getText().toString().isEmpty()) {
+            Toast.makeText(this.getContext(),"Uno o mas campos estan vacios",Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this.getContext(), "No se puede dividir por 0", Toast.LENGTH_SHORT).show();
+            double val_1 = Integer.parseInt(txt_number1.getText().toString());
+            double val_2 = Integer.parseInt(txt_number2.getText().toString());
+            double sum = val_1 - val_2;
+            res = String.valueOf(sum);
+            txt_resultado.setText(res);
+        }
+        return res;
+    }
+    public String opMul(){
+        String res = "";
+        if (txt_number1.getText().toString().isEmpty() || txt_number2.getText().toString().isEmpty()) {
+            Toast.makeText(this.getContext(),"Uno o mas campos estan vacios",Toast.LENGTH_SHORT).show();
+        } else {
+            double val_1 = Integer.parseInt(txt_number1.getText().toString());
+            double val_2 = Integer.parseInt(txt_number2.getText().toString());
+            double sum = val_1 * val_2;
+            res = String.valueOf(sum);
+            txt_resultado.setText(res);
+        }
+        return res;
+    }
+    public String opDiv(){
+        String res = "";
+        if (txt_number1.getText().toString().isEmpty() || txt_number2.getText().toString().isEmpty()) {
+            Toast.makeText(this.getContext(),"Uno o mas campos estan vacios",Toast.LENGTH_SHORT).show();
+        } else {
+            double val_1 = Integer.parseInt(txt_number1.getText().toString());
+            double val_2 = Integer.parseInt(txt_number2.getText().toString());
+            res = "";
+            if (val_2 != 0) {
+                double sum = val_1 / val_2;
+                res = String.valueOf(sum);
+                txt_resultado.setText(res);
+            } else {
+                Toast.makeText(this.getContext(), "No se puede dividir por 0", Toast.LENGTH_SHORT).show();
+            }
         }
         return res;
     }

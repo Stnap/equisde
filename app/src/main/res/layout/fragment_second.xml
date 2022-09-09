@@ -4,34 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTintMode="add"
     tools:context=".SecondFragment">
-
-    <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="69dp"
         android:text="@string/previous"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="125dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="129dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="62dp"
         android:text="@string/ThirdFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_second"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+
+    <EditText
+        android:id="@+id/txt_number2"
+        android:layout_width="149dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="66dp"
+        android:ems="10"
+        android:hint="@string/number2"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/spi_option"
+        app:layout_constraintEnd_toStartOf="@+id/imCalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imCalculate" />
+
+    <EditText
+        android:id="@+id/txt_number1"
+        android:layout_width="154dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="49dp"
+        android:ems="10"
+        android:hint="@string/number1"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/imCalculate"
+        app:layout_constraintEnd_toStartOf="@+id/imCalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spi_option"
+        android:layout_width="258dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="54dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
+        app:layout_constraintStart_toStartOf="@+id/txt_number2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_number2" />
+
+    <ImageButton
+        android:id="@+id/imCalculate"
+        android:layout_width="77dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="59dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/calc"
+        app:layout_constraintBottom_toTopOf="@+id/txt_number2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_number2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="343dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="62dp"
+        android:ems="10"
+        android:hint="@string/resultado"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_second" />
+        app:layout_constraintTop_toBottomOf="@+id/spi_option" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
