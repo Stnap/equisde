@@ -17,6 +17,9 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.clase3108dsm.databinding.FragmentFirstBinding;
 
+/**
+ * @author Vanesa Briones Ibacache
+ */
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
