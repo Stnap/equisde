@@ -108,7 +108,7 @@ public class SecondFragment extends Fragment {
     public String opSum() {
         String res = "";
         if (txt_number1.getText().toString().isEmpty() || txt_number2.getText().toString().isEmpty()) {
-            txt_resultado2.setText("Uno o dos campos estan vacios");
+            Toast.makeText(this.getContext(),"Uno o mas campos estan vacios",Toast.LENGTH_SHORT).show();
         } else {
             double val_1 = Integer.parseInt(txt_number1.getText().toString());
             double val_2 = Integer.parseInt(txt_number2.getText().toString());
@@ -148,7 +148,7 @@ public class SecondFragment extends Fragment {
     public String opDiv(){
         String res = "";
         if (txt_number1.getText().toString().isEmpty() || txt_number2.getText().toString().isEmpty()) {
-            txt_resultado2.setText("Uno o dos campos estan vacios");
+            Toast.makeText(this.getContext(),"Uno o mas campos estan vacios",Toast.LENGTH_SHORT).show();
         }else {
             double val_1 = Integer.parseInt(txt_number1.getText().toString());
             double val_2 = Integer.parseInt(txt_number2.getText().toString());
