@@ -35,13 +35,13 @@ public class SecondFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         txt_number1 = (EditText) binding.txtNumber1;
         txt_number2 = (EditText) binding.txtNumber2;
         txt_resultado2 = (EditText) binding.editTextTextPersonName3;
         sp_operation = (Spinner) binding.spiOption;
         btn_image = (ImageButton) binding.imCalculate;
+
 
         String [] operations = {
                 "Selecciona una operación",
@@ -50,6 +50,7 @@ public class SecondFragment extends Fragment {
                 "Multiplicar",
                 "Dividir",
         };
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,operations);
         sp_operation.setAdapter(adapter);
         return binding.getRoot();
