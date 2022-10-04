@@ -31,7 +31,7 @@ public class FirstFragment extends Fragment {
     private CheckBox cb_sum,cb_res,cb_mul,cb_div;
     private RadioGroup rad_group;
 
-    private String sum,res,mul,div;
+    private String sum,res,mul,div,jijija;
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
